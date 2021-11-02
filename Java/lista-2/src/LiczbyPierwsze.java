@@ -4,12 +4,15 @@ import java.lang.Math;
 public final class LiczbyPierwsze {
     private final static  int POTEGA2 = 21;
     private final static boolean[] SITO = new boolean[1 << POTEGA2];
-//    public static ArrayList<Long> czynnikiPierwsze = new ArrayList<Long>();
-//    public static boolean czyPierwsza(long x) {
-//        return SITO[(int) x];
-//    }
 
     public static ArrayList<Long> naCzynnikiPierwsze(long x) {
+        boolean isNegative = false;
+
+        if (x < 0) {
+            x = x * (-1L);
+            isNegative = true;
+        }
+
         long numHalf = x / 2;
         long limit = (long) Math.sqrt(numHalf) + 1;
         long lowLimit = limit;
@@ -19,6 +22,10 @@ public final class LiczbyPierwsze {
         boolean[] firstSegmentSieve = new boolean[(int) limit + 1];
         ArrayList<Long> firstSegmentPrimes = new ArrayList<>();
         ArrayList<Long> primeFactors = new ArrayList<>();
+
+        if (isNegative) {
+            primeFactors.add(-1L);
+        }
 
         for (int i = 2; i < limit + 1; i++) {
             firstSegmentSieve[i] = true;
@@ -59,21 +66,13 @@ public final class LiczbyPierwsze {
                 if (start < lowLimit) {
                     start += firstSegmentPrimes.get(i);
                 }
-//                System.out.println(lowLimit);
-//                System.out.printf("HighLimit: %d\n", highLimit);
-//                System.out.println(firstSegmentPrimes.get(i));
-//                System.out.printf("Start for i = %d\n", i);
-//                System.out.printf("Start value: %d\n", start);
                 for (int j = start; j < highLimit; j += firstSegmentPrimes.get(i)) {
-//                    System.out.printf("j: %d\n", j);
-//                    System.out.printf("j - lowLimit: %d\n", j - lowLimit);
                     SITO[j - (int) lowLimit] = false;
                 }
             }
 
             for (int i = 0; i < limit + 1; i++) {
                 if (SITO[i]) {
-                    //System.out.println(i + lowLimit);
                     while (dividedNum % (i + lowLimit) == 0) {
                         primeFactors.add((long) i + lowLimit);
                         dividedNum /= i + lowLimit;
@@ -90,10 +89,11 @@ public final class LiczbyPierwsze {
 
     public static void main(String[] args) {
         long[] numArray = {
-                9223372036854775783L
+                98L, -25L, 296L
         };
         for (long num : numArray) {
-            System.out.println(naCzynnikiPierwsze(num));
+            ArrayList<Long> primeFactors = naCzynnikiPierwsze(num);
+            System.out.printf("%d: %s\n", num, primeFactors.toString());
         }
     }
 }

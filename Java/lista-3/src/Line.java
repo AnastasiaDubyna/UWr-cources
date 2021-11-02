@@ -30,8 +30,12 @@ public class Line {
 
     }
 
-//    static Point findCrossPoint(Line firstLine, Line secondLine) {
-//        System.out.println("Placeholder");
-//    }
+    static Point findCrossPoint(Line firstLine, Line secondLine) {
+        double w = firstLine.a * secondLine.b - secondLine.a * firstLine.b;
+        double wx = -firstLine.c * secondLine.b - (-secondLine.c) * firstLine.b;
+        double wy = firstLine.a * (secondLine.c) - secondLine.a * (-firstLine.c);
+
+        return new Point(wx/w , wy/w);
+    }
 
 }

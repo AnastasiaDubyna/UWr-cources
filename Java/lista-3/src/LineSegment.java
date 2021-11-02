@@ -6,8 +6,8 @@ public class LineSegment {
         if (a.getX() == b.getX() && a.getY() == b.getY()) {
             throw new IllegalAccessException("It's a point, not a line segment");
         }
-        this.beg = a;
-        this.end = b;
+        this.beg = new Point(a.getX(), a.getY());
+        this.end = new Point(b.getX(), b.getY());
     }
 
     public Point getBeg() {

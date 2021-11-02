@@ -17,9 +17,9 @@ public class Triangle {
             throw new IllegalAccessException("Invalid triangle");
         }
 
-        this.a = a;
-        this.b = b;
-        this.c = c;
+        this.a = new Point(a.getX(), a.getY());
+        this.b = new Point(b.getX(), b.getY());
+        this.c = new Point(c.getX(), c.getY());
     }
 
     public Point getA() {

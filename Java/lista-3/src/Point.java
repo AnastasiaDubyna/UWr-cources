@@ -16,8 +16,8 @@ public class Point {
     }
 
     public void move(Vector v) {
-        this.x = x + v.dx;
-        this.y = y + v.dy;
+        this.x += v.dx;
+        this.y += v.dy;
     }
 
     public void turn(Point p, double angleDeg) {
@@ -30,7 +30,10 @@ public class Point {
     }
 
     public void reflection(Line p) {
-        System.out.println("Placeholder");
+        double d = ((p.a * p.a * y) - (2 * p.a * p.b * x) - (2 * p.c * p.b) - (p.b * p.b * y)) / (p.a * p.a + p.b * p.b);
+
+        this.x = (p.a * (d - y)) / p.b + x;
+        this.y = d;
     }
 
     public String toString() {
