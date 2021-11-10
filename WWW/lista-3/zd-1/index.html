@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-body-container">
+        <div class="form-container">
+            <p id="form-title">REQUIRED DETAILS</p>
+            <div class="all-inputs-container">
+                <div class="input-container">
+                    <input type="text" id="account-number" placeholder="Account number">
+                    <div class="error-container" id="account-number-error">
+                        <p>Account number should be 16 digits long</p>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="pesel" placeholder="PESEL number">
+                    <div class="error-container" id="pesel-error">
+                        <p>PESEL number should be 11 digits long</p>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="date" id="birth-date" placeholder="Birth date">
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Email">
+                    <div class="error-container" id="email-error">
+                        <p>Invalid email</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>

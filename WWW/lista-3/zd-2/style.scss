@@ -1,0 +1,104 @@
+$font-stack: "Raleway", sans-serif;
+$text-color: rgb(66, 63, 63);
+$hover-color: rgb(112, 165, 224);
+
+* {
+    font-family: $font-stack;
+    box-sizing: border-box;
+    
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+
+.body-container {
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.manufacturers-container, .model-container {
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba(148, 187, 233, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    width: 350px;
+    min-height: 100px;
+
+    &-list {
+        width: 85%;
+        margin: 20px auto;
+    }
+
+    &-input {
+        display: none;
+        // height: 60px;
+        // width: 85%;
+        margin: auto;
+        // margin-top: 10px;
+
+        input {
+            width: 100%;
+            height: 35px;
+            border: none;
+            border-radius: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+    }
+
+    h1 {
+        color: $text-color;
+        letter-spacing: 3px;
+        font-size: 25px;
+        width: 80%;
+        text-align: center;
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    button {
+        border: none;
+        background-color: rgba(204, 183, 207, 0.61);
+        border-radius: 10px;
+        padding: 7px;
+        font-family: $font-stack;
+        color: $text-color;
+        height: 35px;
+
+    }
+}
+
+
+button:hover, #manufacturers-list li:hover {
+    cursor: pointer;
+    color: $hover-color;
+}
+
+li {
+    list-style: none;
+    margin: 10px 0px;
+}
+
+ul {
+    padding: 0px;
+}
