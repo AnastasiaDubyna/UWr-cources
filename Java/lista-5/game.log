@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-23T07:44:59.680778600Z</date>
+  <millis>1637653499680</millis>
+  <nanos>778600</nanos>
+  <sequence>0</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User name: Nastia</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-23T07:54:39.842823500Z</date>
+  <millis>1637654079842</millis>
+  <nanos>823500</nanos>
+  <sequence>0</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User name: Nastia</message>
+</record>
+<record>
+  <date>2021-11-23T07:54:42.804484200Z</date>
+  <millis>1637654082804</millis>
+  <nanos>484200</nanos>
+  <sequence>1</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Range: 4</message>
+</record>
+<record>
+  <date>2021-11-23T07:54:47.398514700Z</date>
+  <millis>1637654087398</millis>
+  <nanos>514700</nanos>
+  <sequence>2</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempt #1:2/3</message>
+</record>
+<record>
+  <date>2021-11-23T07:54:50.426344300Z</date>
+  <millis>1637654090426</millis>
+  <nanos>344300</nanos>
+  <sequence>3</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempt #2:4/5</message>
+</record>
+<record>
+  <date>2021-11-23T07:54:52.744801700Z</date>
+  <millis>1637654092744</millis>
+  <nanos>801700</nanos>
+  <sequence>4</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempt #3:1/1</message>
+</record>
+<record>
+  <date>2021-11-23T07:54:52.745544500Z</date>
+  <millis>1637654092745</millis>
+  <nanos>544500</nanos>
+  <sequence>5</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User won</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-23T08:07:51.484837700Z</date>
+  <millis>1637654871484</millis>
+  <nanos>837700</nanos>
+  <sequence>0</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User name: Nastia</message>
+</record>
+<record>
+  <date>2021-11-23T08:07:52.931946300Z</date>
+  <millis>1637654872931</millis>
+  <nanos>946300</nanos>
+  <sequence>1</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Range: 4</message>
+</record>
+<record>
+  <date>2021-11-23T08:08:32.296795400Z</date>
+  <millis>1637654912296</millis>
+  <nanos>795400</nanos>
+  <sequence>2</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempt #1:3/3</message>
+</record>
+<record>
+  <date>2021-11-23T08:08:32.296795400Z</date>
+  <millis>1637654912296</millis>
+  <nanos>795400</nanos>
+  <sequence>3</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User won</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-23T08:09:04.157604700Z</date>
+  <millis>1637654944157</millis>
+  <nanos>604700</nanos>
+  <sequence>0</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User name: Nastia</message>
+</record>
+<record>
+  <date>2021-11-23T08:09:05.630210800Z</date>
+  <millis>1637654945630</millis>
+  <nanos>210800</nanos>
+  <sequence>1</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Range: 4</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-11-23T08:09:47.103727800Z</date>
+  <millis>1637654987103</millis>
+  <nanos>727800</nanos>
+  <sequence>0</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>User name: N</message>
+</record>
+<record>
+  <date>2021-11-23T08:09:48.701304700Z</date>
+  <millis>1637654988701</millis>
+  <nanos>304700</nanos>
+  <sequence>1</sequence>
+  <logger>main.Main</logger>
+  <level>INFO</level>
+  <class>main.Main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Range: 4</message>
+</record>
