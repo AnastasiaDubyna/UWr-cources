@@ -1,0 +1,15 @@
+/* div {
+    display: block;
+}
+span {
+    display: block;
+} */
+
+div {
+    text-align: center;
+}
+
+span {
+    display: block;
+    text-align: center;
+}

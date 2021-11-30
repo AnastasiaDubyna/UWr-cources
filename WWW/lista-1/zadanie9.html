@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <style>
+        .header-container{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            /* justify-items: center; */
+            align-items: center;
+            margin: 0px 30px;
+        }
+        .nav-container{
+            display: flex;
+            justify-content: end;
+            gap: 50px;
+        }
+        .articles-container{
+            width: 70%;
+        }
+        .single-article-container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+
+        }
+        /* .preview-container{
+            display: flex;
+            justify-items: end;
+        } */
+        .title-preview{
+            display: flex;
+            justify-content: right;
+            margin-top: 5px;
+        }
+        .breadcrumbs{
+            display: flex;
+            margin: 0px 30px;
+        }
+        .breadcrumbs a, .breadcrumbs p{
+            margin: 16px 2px;
+            text-decoration: none;
+            color: darkgreen;
+        }
+        aside h3{
+            display: flex;
+            justify-content: right;
+        }
+        
+        .main-body-container{
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 3px 30px;
+        }
+        .single-article-container img{
+            width: 505px;
+        }
+        .img-preview{
+            width: 257px;
+            display: flex;
+            justify-items: right;
+        }
+        #search{
+            max-height: 30%;
+            /* margin: 5%; */
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-container"> 
+            <h1><i class="fas fa-seedling"></i> Urban jungle</h1>
+            <nav class="nav-container">
+                <input type="text" id="search" value="search">
+                <a href="">About blog</a>
+                <a href="">Contact</a>
+                <a href=""><i class="fas fa-bars"></i></a>
+            </nav>
+        </div>
+    </header>
+    <div class="breadcrumbs">
+        <a href="#">Main</a><p>/</p><p>Articles</p>
+    </div>
+    <div class="main-body-container">
+        <div class="articles-container">
+            <article class="single-article-container">
+                <img src="zadanie9/first-article.jpg" alt="">
+                <div class="text-container">
+                    <h3>Jak dbać o rośliny jesienią i zimą? Teoria i praktyka.</h3>
+                    <p class="date">20 października 2021</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum id atque sed repudiandae eos, enim, neque omnis inventore quia a nam impedit sint beatae labore voluptatum architecto est, vel laboriosam!</p>
+                </div>
+            </article>
+            <article class="single-article-container">
+                <div class="text-container">
+                    <h3>Moje ulubione rośliny doniczkowe w domu. Aktualny top 10.</h3>
+                    <p class="date">18 lipca 2021</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laudantium animi nobis reprehenderit possimus molestias fugit ipsam magni porro exercitationem aliquam, autem commodi iure eius culpa quis recusandae dolor? Provident.</p>
+                </div>
+                <img src="zadanie9/second-article.jpg" alt="">
+            </article>
+            <article class="single-article-container">
+                <img src="zadanie9/third-article.jpg" alt="">
+                <div class="text-container">
+                    <h3>Jak światło i strona świata wpływają na rośliny – porównujemy okazy i szukamy idealnego miejsca</h3>
+                    <p class="date">5 marca 2021</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia a tempora assumenda quisquam culpa commodi? Earum, magni non natus delectus necessitatibus quae corporis ipsum ipsa cupiditate saepe quaerat laudantium voluptatem.</p>
+                </div>
+            </article>
+            <article class="single-article-container">
+                <div class="text-container">
+                    <h3>Jaki nawóz do roślin doniczkowych? Jak i czym nawozić rośliny doniczkowe?</h3>
+                    <p class="date">2 stycznia 2021</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia a tempora assumenda quisquam culpa commodi? Earum, magni non natus delectus necessitatibus quae corporis ipsum ipsa cupiditate saepe quaerat laudantium voluptatem.</p>
+                </div>
+                <img src="zadanie9/fourth-article.jpg" alt="">
+            </article>
+            <article class="single-article-container">
+                <img src="zadanie9/fifth-article.jpg" alt="">
+                <div class="text-container">
+                    <h3>Jak przygotować rośliny do wiosny – marcowe SPA dla roślin po zimie</h3>
+                    <p class="date">8 listopada 2020</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia a tempora assumenda quisquam culpa commodi? Earum, magni non natus delectus necessitatibus quae corporis ipsum ipsa cupiditate saepe quaerat laudantium voluptatem.</p>
+                </div>
+            </article>
+        </div>
+        <aside>
+            <h3>Recently viewed</h3>
+            <div class="preview-container">
+                <img src="zadanie9/fifth-article.jpg" alt="" class="img-preview">
+                <h5 class="title-preview">Jak przygotować rośliny do w...(read more)</h5>
+            </div>
+            <div class="preview-container">
+                <img src="zadanie9/fourth-article.jpg" alt="" class="img-preview">
+                <h5 class="title-preview">Jaki nawóz do roślin doniczko...(read more)</h5>
+            </div>
+            <div class="preview-container">
+                <img src="zadanie9/third-article.jpg" alt="" class="img-preview">
+                <h5 class="title-preview">Jak światło i strona świata wp...(read more)</h5>
+            </div>
+            <div class="preview-container">
+                <img src="zadanie9/second-article.jpg" alt="" class="img-preview">
+                <h5 class="title-preview">Moje ulubione rośliny.Top 10 m...(read more)</h5>
+            </div>
+            <div class="preview-container">
+                <img src="zadanie9/first-article.jpg" alt="" class="img-preview">
+                <h5 class="title-preview">Jak dbać o rośliny jesienią i zim...(read more)</h5>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
