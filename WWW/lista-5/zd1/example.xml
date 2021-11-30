@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <pesel>97060712502</pesel>
+  <email>user@gmail.com</email>
+  <account_number>1234567890123456</account_number>
+  <birth_date>
+    <year>1997</year>
+    <month>6</month>
+    <day>7</day>
+  </birth_date>
+</root>

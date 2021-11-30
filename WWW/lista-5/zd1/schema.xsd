@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pesel"/>
+        <xs:element ref="email"/>
+        <xs:element ref="account_number"/>
+        <xs:element ref="birth_date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pesel" type="xs:integer"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="account_number" type="xs:integer"/>
+  <xs:element name="birth_date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="year"/>
+        <xs:element ref="month"/>
+        <xs:element ref="day"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="year" type="xs:integer"/>
+  <xs:element name="month" type="xs:integer"/>
+  <xs:element name="day" type="xs:integer"/>
+</xs:schema>
