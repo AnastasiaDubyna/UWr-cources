@@ -3,10 +3,12 @@
     "type": "object",
     "properties": {
       "account number": {
-        "type": "integer"
+        "type": "integer",
+        "patter": "^[0-9]{16}&"
       },
       "pesel": {
-        "type": "integer"
+        "type": "integer",
+        "patter": "^[0-9]{11}&"
       },
       "birth date": {
         "type": "object",

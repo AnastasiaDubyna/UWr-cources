@@ -1,0 +1,10 @@
+{
+    "account number" : 1234567890123456,
+    "pesel" : 99120312502,
+    "birth date" : {
+        "year" : 1999,
+        "month" : 12,
+        "day" : 3
+    },
+    "email" : "seconduser@gmail.com"
+}
