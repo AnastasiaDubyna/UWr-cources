@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Submit your homework</h2>
+    <% if(errorMessage !== '') { %>
+        <h3 style="color: red;"><%= errorMessage %></h3>
+    <% } %>
+    <form action="/print" method="post">
+        <div class="input-container">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="<%= name%>">
+        </div>
+        <div class="input-container">
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" id="surname" value="<%= surname%>">
+        </div>
+        <div class="input-container">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" value="<%= subject%>">
+        </div>
+
+        <% for (let i = 1; i<=10; i++) { %>
+        <%     let nameStr = "exercise"+i; %>
+        <div class="input-container">
+            <label for="<%= nameStr %>">Exercice <%= i %></label>
+            <input type="text" name="<%= nameStr %>" id="<%= nameStr %>" value="<%= grades[i]%>"> 
+        </div>
+        <% } %>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

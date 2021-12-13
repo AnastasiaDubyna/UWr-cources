@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Print</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Subject</th>
+            <% for (var i=1; i < 11; i++) { %>
+            <th>
+                Exercise <%= i %>
+            </th>
+            <% } %>
+        </thead>
+        <tbody>
+            <td><%= name%></td>
+            <td><%= surname%></td>
+            <td><%= subject%></td>
+            <% for (var i=0; i < 10; i++) { %>
+            <td>
+                <%= grades[i] %>
+            </td>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
