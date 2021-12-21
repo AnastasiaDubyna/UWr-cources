@@ -67,7 +67,6 @@ public class GameFrame extends JFrame implements KeyListener {
         mazePanel.setSize(600, 600);
         mazePanel.setLayout(new GridLayout(mazeSize, mazeSize));
         mazePanel.setPreferredSize(new Dimension(600, 600));
-        mazeContainer.setBorder(BorderFactory.createLineBorder(Color.black));
         mazeContainer.removeAll();
         mazeContainer.repaint();
         mazeContainer.add(mazePanel);
