@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link href="{{ asset('styles/ex3.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <h1>Header</h1>
+        </header>
+        <div class="center-body-container">
+        {% block center_body %}
+            <div>
+                <ul>
+                    <li><a href="{{ path("ex3-main-page") }}">MAIN PAGE</a></li>
+                    <li><a href="{{ path("ex3-transfers") }}">TRANSFERS</a>
+                        <ul>
+                            <li>
+                                <a href="{{ path("ex3-domestic-transfers") }}">DOMESTIC TRANSFERS</a>
+                                <ul>
+                                    <li><a href="{{ path("ex3-external-transfers") }}">TO EXTERNAL ACCOUNT</a></li>
+                                    <li><a href="{{ path("ex3-own-transfers") }}">TO OWN ACCOUNT</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path("ex3-transfers-list", {"date" : "12-12-2021", "amount" : 100}) }}">LIST OF TRANSFERS</a></li>
+                    <li>
+                        <a href="{{ path("ex3-cards") }}">BANK CARDS</a>
+                        <ul>
+                            <li><a href="{{ path("ex3-credit-cards") }}">CREDIT CARDS</a></li>
+                            <li><a href="{{ path("ex3-account-cards") }}">ACCOUNT CARDS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h1>Content</h1>
+            </div>
+        {% endblock %}
+        </div>
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </body>
+</html>

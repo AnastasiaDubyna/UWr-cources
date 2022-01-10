@@ -1,0 +1,11 @@
+{% extends "ex3-main.html.twig" %}
+
+{% block center_body %}
+    {{ parent() }}
+    <div>
+        <ul>
+            <li>Date: {{ date }}</li>
+            <li>Amount: {{ amount }}</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.zero-score {
+    background: lightgray;
+}
+
+tr:nth-child(n+2):nth-child(-n+4) {
+    background: #49ac49;
+}
