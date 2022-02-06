@@ -21,8 +21,10 @@ async function renderHomePage(req, res) {
 
 async function postStatistics(req, res) {
     if (req.cookies.status === "authorized") {
+        const username = req.cookies.username;
         const {incrementedStat} = req.body;
-        const user = await User.findOne(req.cookies.username)
+        const user = await User.findOne({username});
+        user.statistics["gamesPlayed"] += 1;
         user.statistics[incrementedStat] += 1;
         user.save();
     }

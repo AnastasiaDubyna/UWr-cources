@@ -16,6 +16,12 @@ body {
   }
 }
 
+#players-container {
+  .player {
+
+  }
+}
+
 .game-field-container {
   display: grid;
   grid-template-columns: repeat(3, 262px);

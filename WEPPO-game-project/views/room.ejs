@@ -14,6 +14,12 @@
 <body>
     <div id="info-container">
         <p id="room-number">ROOM #<%= roomNumber%></p>
+        <div id="players-container">
+            <div id="you" class="player">
+                <p><%= username%></p>
+            </div>
+            <div id="opponent" class="player"></div>
+        </div>
         <div id="player-role"></div>
         <div id="turn-container"></div>
         <div id="game-result-container"></div>

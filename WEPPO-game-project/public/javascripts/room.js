@@ -36,15 +36,17 @@ socket.on("game", status => {
         case "draw":
             yourTurn = false;
             addResultInfo("It's a draw!");
-            addToStatistics("");
+            addToStatistics("gamesDraw");
             break;
         case "victory":
             yourTurn = false;
             addResultInfo("You won!");
+            addToStatistics("gamesWon");
             break;
         case "defeat":
             yourTurn = false;
             addResultInfo("You lost!")
+            addToStatistics("gamesLost");
     }
 })
 
@@ -55,6 +57,26 @@ socket.on("error", type => {
             break;
     }
 })
+
+
+function addToStatistics(statName) {
+    fetch("/home/statistics", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+            incrementedStat: statName
+        })
+    })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+        })
+        .catch(error => {
+            console.log('Unhappy little error :(', error);
+        });
+}
 
 
 function allowMoves() {
