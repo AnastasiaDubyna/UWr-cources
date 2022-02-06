@@ -42,8 +42,14 @@ function createNewRoom(req, res) {
     res.send({"roomNumber": roomNumber, "sign": "X"});
 }
 
+
+function availableRooms(req, res) {
+    res.render("availableRooms.ejs");
+}
+
 module.exports = {
     roomController,
     doesRoomExist,
-    createNewRoom
+    createNewRoom,
+    availableRooms
 };

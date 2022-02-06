@@ -1,25 +1,4 @@
-$("#join-room-form").submit(event => {
-    event.preventDefault();
-    const roomNumber = $("#existing-room-number").val();
-
-    fetch(`/room/exist/${roomNumber}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-    })
-        .then(response => response.json())
-        .then(response => {
-            console.log("Exist", response.exist);
-            if (response.exist) {
-                window.location.replace(`room/${roomNumber}`);
-            } else {
-                $("#error-message-container").append("<p>Room doesn't exist</p>");
-            }
-        })
-})
-
-$("#create-room-form").submit(event => {
+$("#create-room-button").click(event => {
     event.preventDefault();
     let roomNumber;
 
@@ -35,4 +14,9 @@ $("#create-room-form").submit(event => {
             window.location.replace(`room/${roomNumber}`);
         })
 
+})
+
+
+$("#join-room-button").click(() => {
+    window.location.replace("/room/available");
 })

@@ -6,11 +6,15 @@ function setupRoom(app, roomNumber) {
 
 function addToAvailableRooms(app, roomNumber) {
     app.get("game").get("availableRooms").push(roomNumber);
+    console.log("roomNumber" + roomNumber);
+    console.log(app.get("game").get("availableRooms"))
 }
 
 
 function removeFromAvailableRooms(app, roomNumber) {
-    const av
+    const availableRooms = app.get("game").get("availableRooms");
+    const index = availableRooms.indexOf(roomNumber);
+    availableRooms.splice(index, 1);
 }
 
 
@@ -18,4 +22,4 @@ module.exports = {
     setupRoom,
     addToAvailableRooms,
     removeFromAvailableRooms
-}
+};
