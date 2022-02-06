@@ -1,6 +1,7 @@
 const socket = io();
 const roomNumber = window.location.pathname.split("/")[2];
 let yourTurn = false;
+let playerRole;
 
 const images = {
     X: "../images/ex.png",
@@ -13,9 +14,9 @@ const images = {
 
 socket.emit("join room", roomNumber);
 
-socket.on("playerRole", playerRole => {
-    console.log(playerRole);
-    addPlayerRole(playerRole);
+socket.on("playerRole", role => {
+    playerRole = role;
+    addPlayerRole();
 })
 
 socket.on("board", board => {
@@ -56,6 +57,11 @@ socket.on("error", type => {
             redirectToHome();
             break;
     }
+})
+
+
+socket.on("opponent", username => {
+    addOpponent(username);
 })
 
 
@@ -120,9 +126,15 @@ function updateBoard(board) {
 }
 
 
-function addPlayerRole(playerRole) {
-    $("#player-role").append(`<p>You are playing as ${playerRole}</p>`);
+function addPlayerRole() {
+    $("#players-container #you").append(`<p>${playerRole}</p>`);
 }
+
+
+function addOpponent() {
+    
+}
+
 
 
 function redirectToHome() {

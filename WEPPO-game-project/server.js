@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const gameSetupUtils = require("./utils/gameSetup");
+const cookie = require("cookie");
 
 
 const app = express();
@@ -40,9 +41,12 @@ io.on("connection", (socket) => {
         gameSetupUtils.setupRoom(app, roomNumber);
         const roomSize = io.sockets.adapter.rooms.get(roomNumber).size;
         const socketId = socket.id;
+        const username = cookie.parse(socket.handshake.headers.cookie).username;
+
         switch (roomSize) {
             case 1:
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "X");
+                gameSetupUtils.addPlayerUsername(app, roomNumber, socketId, username);
                 gameSetupUtils.setTurn(app, roomNumber, socketId, true);
                 socket.emit("playerRole", "X");
                 break;
@@ -50,6 +54,8 @@ io.on("connection", (socket) => {
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "O");
                 gameSetupUtils.setTurn(app, roomNumber, socketId, false);
                 socket.emit("playerRole", "O");
+                socket.emit("opponent", gameSetupUtils.getOpponentUsername(app, roomNumber, socketId));
+                socket.to(roomNumber).emit("opponent", username);
                 io.to(roomNumber).emit("game", "start");
                 // console.log(gameSetupUtils.getWhoseTurn(app, roomNumber));
                 io.to(gameSetupUtils.getWhoseTurn(app, roomNumber)).emit("game", "yourTurn");

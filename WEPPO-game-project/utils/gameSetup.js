@@ -1,6 +1,6 @@
 function setupRoom(app, roomNumber) {
     if (!app.get("game").get(roomNumber)) {
-        app.get("game").set(roomNumber, new Map([["playersRoles", new Map()], ["board", {}], ["turn", {}]]));
+        app.get("game").set(roomNumber, new Map([["playersRoles", new Map()], ["board", {}], ["turn", {}], ["playersUsernames", {}]]));
     }
 }
 
@@ -27,6 +27,20 @@ function getPlayerIdBySign(app, roomNumber, sign) {
 
 }
 
+
+function addPlayerUsername(app, roomNumber, socketId, username) {
+    app.get("game").get(roomNumber).get("playersUsernames")[socketId] = username;
+}
+
+
+function getOpponentUsername(app, roomNumber, socketId) {
+    const playersUsername = app.get("game").get(roomNumber).get("playersUsernames");
+    for (const id in playersUsername) {
+        if (id !== socketId) {
+            return playersUsername[id];
+        }
+    }
+}
 
 
 function setTurn(app, roomNumber, socketId, val) {
@@ -97,7 +111,9 @@ module.exports = {
     setTurn,
     changeTurn,
     getWhoseTurn,
-    getGameStatus
+    getGameStatus,
+    addPlayerUsername,
+    getOpponentUsername
 }
 
 //app
@@ -108,3 +124,4 @@ module.exports = {
 //                            turn[Obj]
 //                                     playerOneId: Bool
 //                                     playerTwoId: Bool
+//                            playersUsernames[Obj]

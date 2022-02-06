@@ -16,7 +16,8 @@ async function roomController(req, res) {
     const areCookiesValid = await cookiesService.areCookiesValid(req);
     if (areCookiesValid) {
         const roomNumber = req.params.roomNumber;
-        res.render("room.ejs", {roomNumber: roomNumber});
+        const username = req.cookies.username;
+        res.render("room.ejs", {roomNumber, username});
         return;
     }
     res.redirect("/auth")
