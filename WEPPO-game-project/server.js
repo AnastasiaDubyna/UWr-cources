@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const gameSetupUtils = require("./utils/gameSetup");
+const roomsUtils = require("./utils/rooms");
 const cookie = require("cookie");
 
 
@@ -20,7 +21,6 @@ const io = socketio(server);
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set("game", new Map());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -36,9 +36,11 @@ app.get("/", (req, res) => {
 })
 
 io.on("connection", (socket) => {
+    gameSetupUtils.setupGame(app);
+
     socket.on("join room", roomNumber => {
         socket.join(roomNumber);
-        gameSetupUtils.setupRoom(app, roomNumber);
+        roomsUtils.setupRoom(app, roomNumber);
         const roomSize = io.sockets.adapter.rooms.get(roomNumber).size;
         const socketId = socket.id;
         const username = cookie.parse(socket.handshake.headers.cookie).username;
@@ -48,11 +50,13 @@ io.on("connection", (socket) => {
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "X");
                 gameSetupUtils.addPlayerUsername(app, roomNumber, socketId, username);
                 gameSetupUtils.setTurn(app, roomNumber, socketId, true);
+                roomsUtils.addToAvailableRooms(app, roomNumber);
                 socket.emit("playerRole", "X");
                 break;
             case 2:
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "O");
                 gameSetupUtils.setTurn(app, roomNumber, socketId, false);
+                roomsUtils.removeFromAvailableRooms(app, roomNumber);
                 socket.emit("playerRole", "O");
                 socket.emit("opponent", gameSetupUtils.getOpponentUsername(app, roomNumber, socketId));
                 socket.to(roomNumber).emit("opponent", username);

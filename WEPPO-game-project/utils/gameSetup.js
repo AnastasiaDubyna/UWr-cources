@@ -1,7 +1,5 @@
-function setupRoom(app, roomNumber) {
-    if (!app.get("game").get(roomNumber)) {
-        app.get("game").set(roomNumber, new Map([["playersRoles", new Map()], ["board", {}], ["turn", {}], ["playersUsernames", {}]]));
-    }
+function setupGame(app) {
+    app.set("game", new Map([["availableRooms", []]]));
 }
 
 function addPlayerRole(app, roomNumber, socketId, role) {
@@ -104,7 +102,6 @@ function checkDiagonals(board) {
 // 20  21  22
 
 module.exports = {
-    setupRoom,
     addPlayerRole,
     addMove,
     getBoard,
@@ -113,7 +110,8 @@ module.exports = {
     getWhoseTurn,
     getGameStatus,
     addPlayerUsername,
-    getOpponentUsername
+    getOpponentUsername,
+    setupGame,
 }
 
 //app
