@@ -11,4 +11,8 @@ html, body, .body-container {
   padding: 0;
 }
 
+button {
+  background: transparent;
+}
+
 /*# sourceMappingURL=base.css.map */

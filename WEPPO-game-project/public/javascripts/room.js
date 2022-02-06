@@ -193,13 +193,15 @@ function redirectToHome() {
 
 
 function showWaitingMessage() {
-    messageContainer.append("<p>Waiting for another player</p>").toggleClass("invisible");
+    messageContainer.append(`<h2>Your room number is ${roomNumber}</h2> <p>Waiting for another player</p>`);
     toggleLayout();
 }
 
 
 function showPlayerLeftMessage() {
-    messageContainer.empty().append("<p>Your opponent left the room</p> <button class='go-home-button'>Return to home page</button>");
+    messageContainer.empty().append("<p>Your opponent left the room</p> " +
+        "<button class='go-home-button' style='bottom: 355px'>Return to home page</button>");
+    $(".go-home-button").click(redirectToHome);
     toggleLayout();
 }
 

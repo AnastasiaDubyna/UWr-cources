@@ -30,4 +30,43 @@ form {
 
 .enter-room-container {
   display: flex;
+  gap: 10px;
+}
+
+button {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 82% 1% 97% 1%/4% 95% 5% 96%;
+}
+
+input {
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 82% 1% 97% 1%/4% 95% 5% 96%;
+}
+
+.statistics-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 34px;
+
+  div {
+    padding: 10px;
+    width: 25%;
+    border: 2px solid black;
+    text-align: center;
+
+    &:nth-child(2n) {
+    border-radius: 10% 3% 5% 1%/4% 45% 5% 16%;
+    }
+
+    &:nth-child(2n-1) {
+      border-radius: 82% 1% 97% 1%/4% 95% 5% 96%;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
 }
