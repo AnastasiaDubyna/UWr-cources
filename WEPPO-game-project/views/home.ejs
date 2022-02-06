@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-body-container">
+        <div class="information-container">
+            <h1>WELCOME, <%= username%></h1>
+            <% if (statistics) {%>
+                <ul>
+                    <li>PLAYED: <%= statistics.gamesPlayed %></li>
+                    <li>WON: <%= statistics.gamesWon %></li>
+                    <li>LOST: <%= statistics.gamesLost %></li>
+                    <li>DRAWS: <%= statistics.gamesDraw %></li>
+                </ul>
+            <%}%>
+        </div>
+        <div class="enter-room-container">
+            <form id="join-room-form">
+                <input name="existing-room-number" id="existing-room-number">
+                <input type="submit" value="Join existing room">
+                <div id="error-message-container">
+
+                </div>
+            </form>
+            <form id="create-room-form">
+                <input type="submit" value="Create new room">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript"  src="/javascripts/home.js"></script>
+<!--    <script src="/socket.io/socket.io.js"></script>-->
+
+    <!--    <button id="start-new-game-button">START NEW GAME</button>-->
+</body>
+</html>

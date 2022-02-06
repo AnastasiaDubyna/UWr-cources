@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Graph implements Serializable {
+public class Graph {
     ArrayList<Node> nodes;
     ArrayList<Edge> edges;
     DrawingPanel drawingPanel;
@@ -65,11 +65,5 @@ public class Graph implements Serializable {
         drawingPanel.repaint();
     }
 
-    private void writeObject(ObjectOutputStream out) throws IOException {
-
-    }
-
-    private void readObject(ObjectInputStream in)
-            throws IOException, ClassNotFoundException;
 
 }

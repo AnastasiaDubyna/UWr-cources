@@ -1,0 +1,71 @@
+         2401 function calls (2088 primitive calls) in 0.002 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      160    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:404(parent)
+        1    0.000    0.000    0.002    0.002 <string>:1(<module>)
+        8    0.000    0.000    0.000    0.000 boolalg.py:336(__hash__)
+        8    0.000    0.000    0.000    0.000 boolalg.py:404(__hash__)
+       16    0.000    0.000    0.000    0.000 boolalg.py:434(<lambda>)
+       16    0.000    0.000    0.000    0.000 cache.py:69(wrapper)
+       32    0.000    0.000    0.000    0.000 compatibility.py:150(iterable)
+    32/16    0.000    0.000    0.000    0.000 compatibility.py:315(default_sort_key)
+       16    0.000    0.000    0.000    0.000 compatibility.py:479(_nodes)
+    66/22    0.000    0.000    0.001    0.000 compatibility.py:501(ordered)
+      116    0.000    0.000    0.000    0.000 ex2_sheet5.py:105(__init__)
+   125/77    0.000    0.000    0.000    0.000 ex2_sheet5.py:110(calculate)
+        3    0.000    0.000    0.000    0.000 ex2_sheet5.py:113(__str__)
+      134    0.000    0.000    0.000    0.000 ex2_sheet5.py:120(__init__)
+       17    0.000    0.000    0.000    0.000 ex2_sheet5.py:126(calculate)
+        7    0.000    0.000    0.000    0.000 ex2_sheet5.py:129(__str__)
+   141/57    0.000    0.000    0.000    0.000 ex2_sheet5.py:134(calculate)
+        4    0.000    0.000    0.000    0.000 ex2_sheet5.py:137(__str__)
+   114/46    0.000    0.000    0.000    0.000 ex2_sheet5.py:142(calculate)
+       31    0.000    0.000    0.000    0.000 ex2_sheet5.py:150(__init__)
+        3    0.000    0.000    0.000    0.000 ex2_sheet5.py:153(calculate)
+       21    0.000    0.000    0.000    0.000 ex2_sheet5.py:156(__str__)
+      144    0.000    0.000    0.000    0.000 ex2_sheet5.py:161(calculate)
+        5    0.000    0.000    0.000    0.000 ex2_sheet5.py:166(__init__)
+        1    0.000    0.000    0.002    0.002 ex2_sheet5.py:173(run)
+        1    0.000    0.000    0.000    0.000 ex2_sheet5.py:20(__add__)
+        1    0.000    0.000    0.000    0.000 ex2_sheet5.py:23(__mul__)
+     31/4    0.000    0.000    0.000    0.000 ex2_sheet5.py:26(_get_vars)
+        4    0.000    0.000    0.001    0.000 ex2_sheet5.py:46(_get_all_permutations)
+        4    0.000    0.000    0.000    0.000 ex2_sheet5.py:60(_assign_permutations_to_vars)
+        4    0.000    0.000    0.002    0.000 ex2_sheet5.py:74(is_tautology)
+        4    0.000    0.000    0.000    0.000 ex2_sheet5.py:83(<listcomp>)
+        4    0.000    0.000    0.000    0.000 ex2_sheet5.py:84(<listcomp>)
+        2    0.000    0.000    0.000    0.000 ex2_sheet5.py:86(simplify)
+    42/22    0.000    0.000    0.001    0.000 iterables.py:1396(multiset_permutations)
+        6    0.000    0.000    0.000    0.000 iterables.py:1417(<listcomp>)
+       14    0.000    0.000    0.000    0.000 iterables.py:1419(<listcomp>)
+       14    0.000    0.000    0.000    0.000 iterables.py:1420(<listcomp>)
+        4    0.000    0.000    0.000    0.000 iterables.py:1431(<listcomp>)
+       28    0.000    0.000    0.000    0.000 iterables.py:1432(<genexpr>)
+        6    0.000    0.000    0.000    0.000 iterables.py:1433(<listcomp>)
+        6    0.000    0.000    0.000    0.000 iterables.py:190(group)
+      128    0.000    0.000    0.000    0.000 numbers.py:2294(__hash__)
+       16    0.000    0.000    0.000    0.000 sympify.py:92(sympify)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+        1    0.000    0.000    0.002    0.002 {built-in method builtins.exec}
+       32    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       32    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      144    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+      133    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       32    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+       90    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       26    0.000    0.000    0.000    0.000 {built-in method builtins.print}
+       18    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+       82    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+     12/6    0.000    0.000    0.001    0.000 {method 'extend' of 'list' objects}
+       16    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       18    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+       24    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       12    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+      160    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+
+
+It looks like is_tautology function was the most expensive due to its cumulative time

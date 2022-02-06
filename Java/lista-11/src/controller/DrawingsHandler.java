@@ -67,10 +67,14 @@ public class DrawingsHandler implements MouseListener {
         if (draggedNode != null) {
             if (nodeAtPoint != null) {
                 Edge edgeBetween = graph.getEdgeBetweenNodes(nodeAtPoint, draggedNode);
+                System.out.println("Before removing");
+                System.out.println(draggedNode.getEdges());
                 if (edgeBetween != null) {
                     nodeAtPoint.removeEdge(edgeBetween);
                     draggedNode.removeEdge(edgeBetween);
                     graph.removeEdge(edgeBetween);
+                    System.out.println("After removing");
+                    System.out.println(draggedNode.getEdges());
                 } else {
                     Edge newEdge = new Edge(draggedNode, nodeAtPoint);
                     graph.addEdge(newEdge);

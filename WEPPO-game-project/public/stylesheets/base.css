@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Neucha", cursive;
+  font-size: 30px;
+}
+
+html, body, .body-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=base.css.map */
