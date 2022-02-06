@@ -22,6 +22,7 @@
         </div>
         <div id="turn-container"></div>
         <div id="game-result-container"></div>
+        <button class="go-home-button">Home page</button>
     </div>
     <div class="game-field-container">
         <% for (let i = 0; i < 3; i++) { %>
@@ -29,6 +30,8 @@
                     <div id=<%=i.toString() + j.toString()%> class="square"></div>
             <%}%>
         <%}%>
+    </div>
+    <div id="message-container" class="invisible">
     </div>
 
 

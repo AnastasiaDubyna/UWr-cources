@@ -88,6 +88,11 @@ io.on("connection", (socket) => {
             socket.to(roomNumber).emit("game", "defeat");
         }
     })
+
+
+    socket.on("leave", ({roomNumber}) => {
+        socket.to(roomNumber).emit("playerLeft");
+    })
 });
 
 

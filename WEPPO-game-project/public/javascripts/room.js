@@ -1,5 +1,6 @@
 const socket = io();
 const roomNumber = window.location.pathname.split("/")[2];
+const messageContainer = $("#message-container");
 let yourTurn = false;
 let playerRole;
 
@@ -8,6 +9,7 @@ const images = {
     O: "../images/zero.png"
 }
 
+showWaitingMessage();
 // $(window).on("beforeunload", () => {
 //     socket.emit("leave room", roomNumber);
 // })
@@ -26,8 +28,7 @@ socket.on("board", board => {
 socket.on("game", status => {
     switch (status) {
         case "start":
-            allowMoves();
-            console.log("Moves allowed")
+            startGameHandler();
             break;
         case "yourTurn":
             console.log("your turn")
@@ -35,19 +36,14 @@ socket.on("game", status => {
             toggleTurnInfo();
             break;
         case "draw":
-            yourTurn = false;
-            addResultInfo("It's a draw!");
-            addToStatistics("gamesDraw");
+            drawHandler();
             break;
         case "victory":
-            yourTurn = false;
-            addResultInfo("You won!");
-            addToStatistics("gamesWon");
+            victoryHandler();
             break;
         case "defeat":
-            yourTurn = false;
-            addResultInfo("You lost!")
-            addToStatistics("gamesLost");
+            defeatHandler();
+            break;
     }
 })
 
@@ -63,6 +59,41 @@ socket.on("error", type => {
 socket.on("opponent", username => {
     addOpponent(username);
 })
+
+
+socket.on("playerLeft", showPlayerLeftMessage);
+
+function startGameHandler() {
+    $(".go-home-button").click(redirectToHome);
+    allowMoves();
+    toggleLayout();
+    changeBackground();
+    console.log("Moves allowed")
+}
+
+
+function drawHandler() {
+    yourTurn = false;
+    removeBackground();
+    addResultInfo("It's a draw!");
+    addToStatistics("gamesDraw");
+}
+
+
+function victoryHandler() {
+    yourTurn = false;
+    removeBackground();
+    addResultInfo("You won!");
+    addToStatistics("gamesWon");
+}
+
+
+function defeatHandler() {
+    yourTurn = false;
+    removeBackground();
+    addResultInfo("You lost!");
+    addToStatistics("gamesLost");
+}
 
 
 function addToStatistics(statName) {
@@ -102,6 +133,16 @@ function allowMoves() {
 }
 
 
+function changeBackground() {
+    if (yourTurn) {
+        $("#you").css("background-color", "lightgreen");
+        $("#opponent").css("background-color", "transparent");
+    } else {
+        $("#you").css("background-color", "transparent");
+        $("#opponent").css("background-color", "lightgreen");
+    }
+}
+
 function toggleTurnInfo() {
     const turnContainer = $("#turn-container");
     if (turnContainer.children().length === 0) {
@@ -109,6 +150,14 @@ function toggleTurnInfo() {
     } else {
         turnContainer.empty();
     }
+
+    changeBackground();
+}
+
+
+function removeBackground() {
+    $("#you").css("background-color", "transparent");
+    $("#opponent").css("background-color", "transparent");
 }
 
 
@@ -131,14 +180,33 @@ function addPlayerRole() {
 }
 
 
-function addOpponent() {
-    
+function addOpponent(username) {
+    const opponentRole = playerRole === "X" ? "O" : "X";
+    $("#players-container #opponent").append(`<p>${username}</p> <p>${opponentRole}</p>`);
 }
 
 
-
 function redirectToHome() {
+    socket.emit("leave", {roomNumber});
     window.location.replace("/home");
+}
+
+
+function showWaitingMessage() {
+    messageContainer.append("<p>Waiting for another player</p>").toggleClass("invisible");
+    toggleLayout();
+}
+
+
+function showPlayerLeftMessage() {
+    messageContainer.empty().append("<p>Your opponent left the room</p> <button class='go-home-button'>Return to home page</button>");
+    toggleLayout();
+}
+
+function toggleLayout() {
+    $("#info-container").toggleClass("invisible");
+    $(".game-field-container").toggleClass("invisible");
+    messageContainer.toggleClass("invisible");
 }
 
 
