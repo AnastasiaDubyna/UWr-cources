@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const gameSetupUtils = require("./utils/gameSetup");
+const gameUtils = require("./utils/game");
 const roomsUtils = require("./utils/rooms");
 const cookie = require("cookie");
 
@@ -49,21 +50,21 @@ io.on("connection", (socket) => {
             case 1:
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "X");
                 gameSetupUtils.addPlayerUsername(app, roomNumber, socketId, username);
-                gameSetupUtils.setTurn(app, roomNumber, socketId, true);
+                gameUtils.setTurn(app, roomNumber, socketId, true);
                 roomsUtils.addToAvailableRooms(app, roomNumber);
                 socket.emit("playerRole", "X");
                 io.emit("availableRoom", roomNumber);
                 break;
             case 2:
                 gameSetupUtils.addPlayerRole(app, roomNumber, socketId, "O");
-                gameSetupUtils.setTurn(app, roomNumber, socketId, false);
+                gameUtils.setTurn(app, roomNumber, socketId, false);
                 roomsUtils.removeFromAvailableRooms(app, roomNumber);
                 io.emit("fullRoom", roomNumber);
                 socket.emit("playerRole", "O");
                 socket.emit("opponent", gameSetupUtils.getOpponentUsername(app, roomNumber, socketId));
                 socket.to(roomNumber).emit("opponent", username);
                 io.to(roomNumber).emit("game", "start");
-                io.to(gameSetupUtils.getWhoseTurn(app, roomNumber)).emit("game", "yourTurn");
+                io.to(gameUtils.getWhoseTurn(app, roomNumber)).emit("game", "yourTurn");
                 break;
             default:
                 socket.emit("error", "full");
@@ -71,12 +72,12 @@ io.on("connection", (socket) => {
     });
 
     socket.on("move", ({roomNumber, squareId}) => {
-        gameSetupUtils.addMove(app, roomNumber, socket.id, squareId);
-        io.to(roomNumber).emit("board", gameSetupUtils.getBoard(app, roomNumber));
-        const gameStatus = gameSetupUtils.getGameStatus(app, roomNumber);
+        gameUtils.addMove(app, roomNumber, socket.id, squareId);
+        io.to(roomNumber).emit("board", gameUtils.getBoard(app, roomNumber));
+        const gameStatus = gameUtils.getGameStatus(app, roomNumber);
         if (gameStatus.continue === true) {
-            gameSetupUtils.changeTurn(app, roomNumber);
-            io.to(gameSetupUtils.getWhoseTurn(app, roomNumber)).emit("game", "yourTurn");
+            gameUtils.changeTurn(app, roomNumber);
+            io.to(gameUtils.getWhoseTurn(app, roomNumber)).emit("game", "yourTurn");
         } else if (gameStatus.draw === true) {
             io.to(roomNumber).emit("game", "draw");
         } else {
@@ -92,7 +93,6 @@ io.on("connection", (socket) => {
 
 
     socket.on("getAvailableRooms", () => {
-        const rooms = app.get("game").get("availableRooms");
         socket.emit("availableRooms", app.get("game").get("availableRooms"));
     })
 });

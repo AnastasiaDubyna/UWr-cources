@@ -35,15 +35,20 @@ $("#join-button").click(event => {
         .then(response => {
             console.log("Exist", response.exist);
             if (response.exist) {
-                window.location.replace(`room/${roomNumber}`);
+                window.location.replace(`/room/${roomNumber}`);
             } else {
                 $("#error-message-container").append("<p>Room doesn't exist</p>");
             }
         })
 })
 
+
+$(".go-back-button").click(() => {
+    window.location.replace("/home");
+})
+
 function addNewRoom(roomNumber) {
-    availableRoomsContainer.append(`<button id="${roomNumber}" class="roomButton">${roomNumber}</button>`);
+    availableRoomsContainer.append(`<button id="${roomNumber}" class="room-button">${roomNumber}</button>`);
     $(`#${roomNumber}`).click(() => {
         window.location.replace(`/room/${roomNumber}`);
     })
