@@ -7,7 +7,6 @@ const homeRouter = require("./routes/home");
 const roomRouter = require("./routes/room");
 const mongoose = require("mongoose");
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const gameSetupUtils = require("./utils/gameSetup");
 const gameUtils = require("./utils/game");
 const roomsUtils = require("./utils/rooms");
@@ -18,7 +17,6 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-// app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
